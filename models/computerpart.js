@@ -5,7 +5,7 @@ const { Schema } = mongoose;
 const ComputerPartSchema = new Schema({
 	name: { type: String, required: true, maxlength: 100 },
 	description: { type: String },
-	picture: { type: mongoose.SchemaTypes.url },
+	picture: { type: mongoose.SchemaTypes.Url },
 	price: { type: Number, required: true },
 	quantity: { type: Number },
 	manufacture_date: { type: Date },
