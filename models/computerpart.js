@@ -9,6 +9,7 @@ const ComputerPartSchema = new Schema({
 	price: { type: Number, required: true },
 	quantity: { type: Number },
 	manufacture_date: { type: Date },
+	features: [{ type: String }],
 });
 
 CategorySchema.virtual('url').get(function () {
