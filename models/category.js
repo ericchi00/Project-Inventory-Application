@@ -5,11 +5,11 @@ const { Schema } = mongoose;
 const CategorySchema = new Schema({
 	name: { type: String, required: true, maxlength: 100 },
 	description: { type: String },
-	picture: { type: mongoose.SchemaTypes.Url },
+	picture: { type: String },
 });
 
 CategorySchema.virtual('url').get(function () {
-	return '/category/' + this_id;
+	return '/category/' + this._id;
 });
 
 export default mongoose.model('Category', CategorySchema);

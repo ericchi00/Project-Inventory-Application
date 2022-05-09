@@ -7,15 +7,15 @@ const ComputerPartSchema = new Schema({
 	category: { type: Schema.Types.ObjectId, ref: 'Category' },
 	manufacturer: { type: Schema.Types.ObjectId, ref: 'Manufacturer' },
 	description: { type: String },
-	picture: { type: mongoose.SchemaTypes.Url },
+	picture: { type: String },
 	price: { type: Number, required: true },
 	quantity: { type: Number },
 	manufacture_date: { type: Date },
-	features: [{ type: String }],
+	features: [{ type: Object }],
 });
 
-CategorySchema.virtual('url').get(function () {
-	return '/computerpart/' + this_id;
+ComputerPartSchema.virtual('url').get(function () {
+	return '/computerpart/' + this._id;
 });
 
 export default mongoose.model('ComputerPart', ComputerPartSchema);

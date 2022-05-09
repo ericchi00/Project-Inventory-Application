@@ -5,11 +5,11 @@ const { Schema } = mongoose;
 const ManufacturerSchema = new Schema({
 	name: { type: String, required: true, maxlength: 100 },
 	description: { type: String },
-	picture: { type: mongoose.SchemaTypes.Url },
+	picture: { type: String },
 });
 
-CategorySchema.virtual('url').get(function () {
-	return '/manufacturer/' + this_id;
+ManufacturerSchema.virtual('url').get(function () {
+	return '/manufacturer/' + this._id;
 });
 
 export default mongoose.model('Manufacturer', ManufacturerSchema);
