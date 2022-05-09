@@ -27,7 +27,7 @@
                     href="/manufacturer">Manufacturers</a>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3"
                     href="/computerpart">Computer Parts</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/computerpart">Add
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/create">Add
                     Data</a>
             </div>
         </div>
@@ -63,7 +63,9 @@
                                             </a>
                                         </li>
                                         <li class="list-group-item">
-                                            <%= item.name %>
+                                            Name: <a href="<%= item.url %>">
+                                                <%= item.name %>
+                                            </a>
                                         </li>
                                         <li class="list-group-item">
                                             Retail Price: $<%= item.price %>

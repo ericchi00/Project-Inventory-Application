@@ -1,5 +1,5 @@
 import express from 'express';
-import computerpart_list from '../controllers/computerpartcontroller.js';
+import { computerpart_list } from '../controllers/computerpartcontroller.js';
 
 const router = express.Router();
 

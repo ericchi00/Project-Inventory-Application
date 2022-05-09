@@ -14,4 +14,16 @@ const computerpart_list = async (req, res, next) => {
 	}
 };
 
-export default computerpart_list;
+const computerpart_detail = async (req, res, next) => {
+	try {
+		const detail = await ComputerPart.findById(req.params.id)
+			.populate('manufacturer')
+			.populate('category')
+			.exec();
+		res.render('computerpart_detail', { title: detail.name, detail: detail });
+	} catch (error) {
+		next(error);
+	}
+};
+
+export { computerpart_list, computerpart_detail };

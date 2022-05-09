@@ -45,15 +45,40 @@
                     <h1 class="mt-4">
                         <%= title %>
                     </h1>
-                    <ul class="list-group">
-                        <% list.forEach((item)=> { %>
-                            <li class="list-group-item">
-                                <a href="<%= item.url %>">
-                                    <%= item.name %>
-                                </a>
-                            </li>
-                            <% })%>
-                    </ul>
+                    <div class="card mb-3">
+                        <img class="card-img-top" src="<%= detail.picture %>" alt="<%= detail.name %>">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <%= detail.name %>
+                            </h5>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    Manufacturer: <a href="<%= detail.manufacturer.url %>">
+                                        <%=detail.manufacturer.name %>
+                                    </a>
+                                </li>
+                                <li class="list-group-item">
+                                    Category: <a href='<%= detail.category.url %>'>
+                                        <%= detail.category.name %>
+                                    </a>
+                                </li>
+                                <li class="list-group-item">
+                                    Name: <a href="<%= detail.url %>">
+                                        <%= detail.name %>
+                                    </a>
+                                </li>
+                                <li class="list-group-item">
+                                    Retail Price: $<%= detail.price %>
+                                </li>
+                                <li class="list-group-item">
+                                    Release Date : <%= detail.release_date %>
+                                </li>
+                            </ul>
+                            <p class="card-text">
+                                <%= detail.description %>
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

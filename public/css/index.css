@@ -59,3 +59,8 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
     display: flex;
     gap: 1rem;
 }
+
+form button {
+    margin-top: .3rem;
+    float: right;
+}

@@ -10,8 +10,7 @@ const ComputerPartSchema = new Schema({
 	picture: { type: String },
 	price: { type: Number, required: true },
 	quantity: { type: Number },
-	manufacture_date: { type: Date },
-	features: [{ type: Object }],
+	release: { type: Date },
 });
 
 ComputerPartSchema.virtual('url').get(function () {
