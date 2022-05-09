@@ -9,4 +9,13 @@ const manufacturer_list = async (req, res, next) => {
 	}
 };
 
-export default manufacturer_list;
+const manufacturer_detail = async (req, res, next) => {
+	try {
+		const detail = await Manufacturer.findById(req.params.id).exec();
+		res.render('manufacturer_detail', { title: detail.name, detail: detail });
+	} catch (error) {
+		next(error);
+	}
+};
+
+export { manufacturer_detail, manufacturer_list };
