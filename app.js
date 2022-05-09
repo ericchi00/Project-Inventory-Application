@@ -16,12 +16,6 @@ import computerPartRouter from './routes/computerpartroute.js';
 import createRouter from './routes/create.js';
 
 const app = express();
-const mongoDB =
-	process.env.MONGODB_URI ||
-	'mongodb+srv://inventoryapp:lessthan3@sandbox.icjmg.mongodb.net/inventory_application?retryWrites=true&w=majority';
-mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
-const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
